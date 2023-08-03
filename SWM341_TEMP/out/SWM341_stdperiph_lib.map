@@ -1,0 +1,1168 @@
+Component: Arm Compiler for Embedded 6.19 Tool: armlink [5e73cb00]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(.text) refers to system_swm341.o(.text) for SystemInit
+    main.o(.text) refers to swm_usart.o(.text) for SerialInit
+    main.o(.text) refers to main.o(.rodata.str1.1) for .L.str
+    main.o(.text) refers to printfa.o(i.__0printf) for printf
+    main.o(.text) refers to swm341_gpio.o(.text) for GPIO_Init
+    main.o(.text) refers to kd034_st7701s.o(.text) for IC_LCD_Init
+    main.o(.text) refers to swm_rgb_lcd.o(.text) for RGBLCDInit
+    main.o(.text) refers to swm341_lcd.o(.text) for LCD_Start
+    main.o(.text) refers to swm_dma2d.o(.text) for swm_dma2d_init
+    main.o(.text) refers to swm341_jpeg.o(.text) for JPEG_Init
+    main.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    main.o(.text) refers to main.o(.bss.fatfs) for fatfs
+    main.o(.text) refers to ff.o(.text) for f_mount
+    main.o(.text) refers to strlen.o(.text) for strlen
+    main.o(.text) refers to malloc.o(i.malloc) for malloc
+    main.o(.text) refers to strcpy.o(.text) for strcpy
+    main.o(.text) refers to strcat.o(.text) for strcat
+    main.o(.text) refers to main.o(.data.jpeg_image_sdr) for jpeg_image_sdr
+    main.o(.text) refers to main.o(.bss.jfif_info) for jfif_info
+    main.o(.text) refers to jfif_parser.o(.text) for jfif_parse
+    main.o(.text) refers to swm_delay.o(.text) for delay_ms
+    main.o(.text) refers to memcpya.o(.text) for __aeabi_memcpy
+    main.o(.ARM.exidx) refers to main.o(.text) for [Anonymous Symbol]
+    swm_delay.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm_delay.o(.text) refers to swm_delay.o(.bss.fac_us) for fac_us
+    swm_delay.o(.text) refers to swm_delay.o(.bss.fac_ms) for fac_ms
+    swm_delay.o(.ARM.exidx) refers to swm_delay.o(.text) for [Anonymous Symbol]
+    swm_rgb_lcd.o(.text) refers to swm341_gpio.o(.text) for GPIO_Init
+    swm_rgb_lcd.o(.text) refers to swm341_port.o(.text) for PORT_Init
+    swm_rgb_lcd.o(.text) refers to swm_rgb_lcd.o(.data.LCD_Buffer) for LCD_Buffer
+    swm_rgb_lcd.o(.text) refers to swm341_lcd.o(.text) for LCD_Init
+    swm_rgb_lcd.o(.text) refers to swm341_sdram.o(.text) for SDRAM_Init
+    swm_rgb_lcd.o(.ARM.exidx) refers to swm_rgb_lcd.o(.text) for [Anonymous Symbol]
+    swm_usart.o(.text) refers to swm341_port.o(.text) for PORT_Init
+    swm_usart.o(.text) refers to swm341_uart.o(.text) for UART_Init
+    swm_usart.o(.ARM.exidx) refers to swm_usart.o(.text) for [Anonymous Symbol]
+    swm_dma2d.o(.text) refers to system_swm341.o(.data.CyclesPerUs) for CyclesPerUs
+    swm_dma2d.o(.text) refers to swm341_dma2d.o(.text) for DMA2D_Init
+    swm_dma2d.o(.text) refers to swm_rgb_lcd.o(.data.LCD_Buffer) for LCD_Buffer
+    swm_dma2d.o(.text) refers to swm_dma2d.o(.bss.outLayer) for outLayer
+    swm_dma2d.o(.text) refers to swm_delay.o(.text) for delay_ms
+    swm_dma2d.o(.text) refers to swm_dma2d.o(.bss.fgLayer) for fgLayer
+    swm_dma2d.o(.ARM.exidx) refers to swm_dma2d.o(.text) for [Anonymous Symbol]
+    jfif_parser.o(.text) refers to memseta.o(.text) for __aeabi_memclr4
+    jfif_parser.o(.text) refers to memcpya.o(.text) for __aeabi_memcpy4
+    jfif_parser.o(.ARM.exidx) refers to jfif_parser.o(.text) for [Anonymous Symbol]
+    diskio.o(.text) refers to diskio.o(.bss.sd_initialized) for sd_initialized
+    diskio.o(.text) refers to swm341_port.o(.text) for PORT_Init
+    diskio.o(.text) refers to swm341_sdio.o(.text) for SDIO_Init
+    diskio.o(.ARM.exidx) refers to diskio.o(.text) for [Anonymous Symbol]
+    ff.o(.text) refers to ff.o(.bss.FatFs) for FatFs
+    ff.o(.text) refers to ff.o(.rodata.VolumeStr) for VolumeStr
+    ff.o(.text) refers to diskio.o(.text) for disk_status
+    ff.o(.text) refers to ff.o(.bss.Fsid) for Fsid
+    ff.o(.text) refers to ff.o(.bss.LfnBuf) for LfnBuf
+    ff.o(.text) refers to ff.o(.rodata.f_mkfs.defopt) for f_mkfs.defopt
+    ff.o(.text) refers to ff.o(.rodata.f_mkfs.cst32) for f_mkfs.cst32
+    ff.o(.text) refers to ff.o(.rodata.f_mkfs.cst) for f_mkfs.cst
+    ff.o(.text) refers to ff.o(.rodata.str1.1) for .L.str
+    ff.o(.text) refers to ffunicode.o(.text) for ff_uni2oem
+    ff.o(.text) refers to ff.o(.rodata.ExCvt) for ExCvt
+    ff.o(.text) refers to ff.o(.rodata.LfnOfs) for LfnOfs
+    ff.o(.ARM.exidx) refers to ff.o(.text) for [Anonymous Symbol]
+    ff.o(.rodata.VolumeStr) refers to ff.o(.rodata.str1.1) for [Anonymous Symbol]
+    ffunicode.o(.text) refers to ffunicode.o(.rodata.uc437) for uc437
+    ffunicode.o(.text) refers to ffunicode.o(.rodata.ff_wtoupper.cvt1) for ff_wtoupper.cvt1
+    ffunicode.o(.text) refers to ffunicode.o(.rodata.ff_wtoupper.cvt2) for ff_wtoupper.cvt2
+    ffunicode.o(.ARM.exidx) refers to ffunicode.o(.text) for [Anonymous Symbol]
+    swm341_port.o(.ARM.exidx) refers to swm341_port.o(.text) for [Anonymous Symbol]
+    swm341_gpio.o(.text) refers to swm341_port.o(.text) for PORT_Init
+    swm341_gpio.o(.ARM.exidx) refers to swm341_gpio.o(.text) for [Anonymous Symbol]
+    swm341_exti.o(.ARM.exidx) refers to swm341_exti.o(.text) for [Anonymous Symbol]
+    swm341_timr.o(.ARM.exidx) refers to swm341_timr.o(.text) for [Anonymous Symbol]
+    swm341_uart.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm341_uart.o(.ARM.exidx) refers to swm341_uart.o(.text) for [Anonymous Symbol]
+    swm341_adc.o(.ARM.exidx) refers to swm341_adc.o(.text) for [Anonymous Symbol]
+    swm341_dma.o(.ARM.exidx) refers to swm341_dma.o(.text) for [Anonymous Symbol]
+    swm341_i2c.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm341_i2c.o(.ARM.exidx) refers to swm341_i2c.o(.text) for [Anonymous Symbol]
+    swm341_pwm.o(.ARM.exidx) refers to swm341_pwm.o(.text) for [Anonymous Symbol]
+    swm341_can.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm341_can.o(.ARM.exidx) refers to swm341_can.o(.text) for [Anonymous Symbol]
+    swm341_spi.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm341_spi.o(.ARM.exidx) refers to swm341_spi.o(.text) for [Anonymous Symbol]
+    swm341_lcd.o(.ARM.exidx) refers to swm341_lcd.o(.text) for [Anonymous Symbol]
+    swm341_flash.o(.ARM.exidx) refers to swm341_flash.o(.text) for [Anonymous Symbol]
+    swm341_rtc.o(.text) refers to swm341_rtc.o(.rodata..L__const.calcWeekDay.daysOfMonth) for .L__const.calcWeekDay.daysOfMonth
+    swm341_rtc.o(.ARM.exidx) refers to swm341_rtc.o(.text) for [Anonymous Symbol]
+    swm341_crc.o(.ARM.exidx) refers to swm341_crc.o(.text) for [Anonymous Symbol]
+    swm341_wdt.o(.ARM.exidx) refers to swm341_wdt.o(.text) for [Anonymous Symbol]
+    swm341_cordic.o(.ARM.exidx) refers to swm341_cordic.o(.text) for [Anonymous Symbol]
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.bss.USBD_Info) for USBD_Info
+    swm341_usbd.o(.text) refers to system_swm341.o(.data.CyclesPerUs) for CyclesPerUs
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.data.pUSB_Setup) for pUSB_Setup
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.bss.CtrlIn_Ptr) for CtrlIn_Ptr
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.bss.CtrlIn_Size) for CtrlIn_Size
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.bss.USBD_CtrlIn.ZeroLenPk) for USBD_CtrlIn.ZeroLenPk
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.bss.CtrlOut_Ptr) for CtrlOut_Ptr
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.bss.CtrlOut_Size) for CtrlOut_Size
+    swm341_usbd.o(.text) refers to swm341_usbd.o(.bss.CtrlOut_Limit) for CtrlOut_Limit
+    swm341_usbd.o(.ARM.exidx) refers to swm341_usbd.o(.text) for [Anonymous Symbol]
+    swm341_usbd.o(.data.pUSB_Setup) refers to swm341_usbd.o(.bss.Setup_Packet) for [Anonymous Symbol]
+    swm341_div.o(.ARM.exidx) refers to swm341_div.o(.text) for [Anonymous Symbol]
+    swm341_sdram.o(.text) refers to system_swm341.o(.data.CyclesPerUs) for CyclesPerUs
+    swm341_sdram.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm341_sdram.o(.ARM.exidx) refers to swm341_sdram.o(.text) for [Anonymous Symbol]
+    swm341_sdio.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    swm341_sdio.o(.text) refers to swm341_sdio.o(.bss.SD_cardInfo) for SD_cardInfo
+    swm341_sdio.o(.ARM.exidx) refers to swm341_sdio.o(.text) for [Anonymous Symbol]
+    swm341_dac.o(.ARM.exidx) refers to swm341_dac.o(.text) for [Anonymous Symbol]
+    swm341_jpeg.o(.text) refers to dflti.o(.text) for __aeabi_i2d
+    swm341_jpeg.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
+    swm341_jpeg.o(.text) refers to ceil.o(i.ceil) for ceil
+    swm341_jpeg.o(.text) refers to dfixi.o(.text) for __aeabi_d2iz
+    swm341_jpeg.o(.ARM.exidx) refers to swm341_jpeg.o(.text) for [Anonymous Symbol]
+    swm341_dma2d.o(.ARM.exidx) refers to swm341_dma2d.o(.text) for [Anonymous Symbol]
+    system_swm341.o(.text) refers to system_swm341.o(.data.SystemCoreClock) for SystemCoreClock
+    system_swm341.o(.text) refers to system_swm341.o(.data.CyclesPerUs) for CyclesPerUs
+    system_swm341.o(.text) refers to swm341_flash.o(.text) for Flash_Param_at_xMHz
+    system_swm341.o(.text) refers to swm341_port.o(.text) for PORT_Init
+    system_swm341.o(.ARM.exidx) refers to system_swm341.o(.text) for [Anonymous Symbol]
+    startup_swm341.o(RESET) refers to startup_swm341.o(STACK) for __initial_sp
+    startup_swm341.o(RESET) refers to startup_swm341.o(.text) for Reset_Handler
+    startup_swm341.o(RESET) refers to swm_rgb_lcd.o(.text) for LCD_Handler
+    startup_swm341.o(RESET) refers to swm_dma2d.o(.text) for DMA2D_Handler
+    startup_swm341.o(.text) refers to system_swm341.o(.text) for FPU_Enable
+    startup_swm341.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    kd034_st7701s.o(.text) refers to swm_delay.o(.text) for delay_init
+    kd034_st7701s.o(.text) refers to swm341_gpio.o(.text) for GPIO_Init
+    kd034_st7701s.o(.ARM.exidx) refers to kd034_st7701s.o(.text) for [Anonymous Symbol]
+    ceil.o(i.__softfp_ceil) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ceil.o(i.__softfp_ceil) refers to ceil.o(i.ceil) for ceil
+    ceil.o(i.ceil) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ceil.o(i.ceil) refers to dadd.o(.text) for __aeabi_dadd
+    ceil.o(i.ceil) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    printfa.o(i.__0fprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0fprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0fprintf) refers to swm_usart.o(.text) for fputc
+    printfa.o(i.__0printf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0printf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0printf) refers to swm_usart.o(.text) for fputc
+    printfa.o(i.__0printf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0snprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0snprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0snprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0sprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0sprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0sprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i.__0vfprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vfprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vfprintf) refers to swm_usart.o(.text) for fputc
+    printfa.o(i.__0vprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vprintf) refers to swm_usart.o(.text) for fputc
+    printfa.o(i.__0vprintf) refers to stdout.o(.data) for __stdout
+    printfa.o(i.__0vsnprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsnprintf) refers to printfa.o(i._snputc) for _snputc
+    printfa.o(i.__0vsprintf) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._printf_core) for _printf_core
+    printfa.o(i.__0vsprintf) refers to printfa.o(i._sputc) for _sputc
+    printfa.o(i._fp_digits) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._fp_digits) refers to dmul.o(.text) for __aeabi_dmul
+    printfa.o(i._fp_digits) refers to ddiv.o(.text) for __aeabi_ddiv
+    printfa.o(i._fp_digits) refers to cdrcmple.o(.text) for __aeabi_cdrcmple
+    printfa.o(i._fp_digits) refers to dadd.o(.text) for __aeabi_dadd
+    printfa.o(i._fp_digits) refers to dfixul.o(.text) for __aeabi_d2ulz
+    printfa.o(i._fp_digits) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_pre_padding) for _printf_pre_padding
+    printfa.o(i._printf_core) refers to uldiv.o(.text) for __aeabi_uldivmod
+    printfa.o(i._printf_core) refers to printfa.o(i._printf_post_padding) for _printf_post_padding
+    printfa.o(i._printf_core) refers to printfa.o(i._fp_digits) for _fp_digits
+    printfa.o(i._printf_core) refers to uidiv.o(.text) for __aeabi_uidivmod
+    printfa.o(i._printf_post_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    malloc.o(i.free) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloc.o(i.malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloc.o(i.malloc) refers to startup_swm341.o(HEAP) for __heap_base
+    mallocr.o(i.__free$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.__malloc$realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocr.o(i.__malloc$realloc) refers to startup_swm341.o(HEAP) for __heap_base
+    mallocr.o(i.__malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocr.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocr.o(i.realloc) refers to mallocr.o(i.__free$realloc) for __free$realloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.internal_alloc) for internal_alloc
+    mallocr.o(i.realloc) refers to mallocr.o(i.__malloc$realloc) for __malloc$realloc
+    mallocr.o(i.realloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    malloca.o(i.__aligned_malloc) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__aligned_malloc) refers to startup_swm341.o(HEAP) for __heap_base
+    malloca.o(i.__free$memalign) refers to mvars.o(.data) for __microlib_freelist
+    malloca.o(i.__malloc$memalign) refers to malloca.o(i.__aligned_malloc) for __aligned_malloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist_initialised
+    mallocra.o(i.__aligned_malloc$realloc) refers to startup_swm341.o(HEAP) for __heap_base
+    mallocra.o(i.__aligned_malloc$realloc) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__free$realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.__malloc$realloc$memalign) refers to mallocra.o(i.__aligned_malloc$realloc) for __aligned_malloc$realloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__free$realloc$memalign) for __free$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.internal_alloc) for internal_alloc
+    mallocra.o(i.__realloc$memalign) refers to mallocra.o(i.__malloc$realloc$memalign) for __malloc$realloc$memalign
+    mallocra.o(i.__realloc$memalign) refers to mvars.o(.data) for __microlib_freelist
+    mallocra.o(i.internal_alloc) refers to memcpya.o(.text) for __aeabi_memcpy
+    mallocra.o(i.internal_alloc) refers to mvars.o(.data) for __microlib_freelist
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_swm341.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_swm341.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text) for main
+    uldiv.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    uldiv.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dfixul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixul.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dfixul.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    cdrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.ARM.exidx), (16 bytes).
+    Removing main.o(.ARM.use_no_argv), (4 bytes).
+    Removing swm_delay.o(.ARM.exidx), (48 bytes).
+    Removing swm_rgb_lcd.o(.ARM.exidx), (24 bytes).
+    Removing swm_usart.o(.ARM.exidx), (16 bytes).
+    Removing swm_dma2d.o(.ARM.exidx), (24 bytes).
+    Removing swm_dma2d.o(.data.Img_Buffer), (4 bytes).
+    Removing swm_dma2d.o(.bss.bgLayer), (16 bytes).
+    Removing jfif_parser.o(.ARM.exidx), (8 bytes).
+    Removing diskio.o(.ARM.exidx), (40 bytes).
+    Removing ff.o(.ARM.exidx), (488 bytes).
+    Removing ffunicode.o(.ARM.exidx), (24 bytes).
+    Removing swm341_port.o(.ARM.exidx), (8 bytes).
+    Removing swm341_gpio.o(.ARM.exidx), (120 bytes).
+    Removing swm341_exti.o(.text), (344 bytes).
+    Removing swm341_exti.o(.ARM.exidx), (48 bytes).
+    Removing swm341_timr.o(.text), (3480 bytes).
+    Removing swm341_timr.o(.ARM.exidx), (248 bytes).
+    Removing swm341_uart.o(.ARM.exidx), (208 bytes).
+    Removing swm341_adc.o(.text), (1528 bytes).
+    Removing swm341_adc.o(.ARM.exidx), (128 bytes).
+    Removing swm341_dma.o(.text), (1322 bytes).
+    Removing swm341_dma.o(.ARM.exidx), (96 bytes).
+    Removing swm341_i2c.o(.text), (1180 bytes).
+    Removing swm341_i2c.o(.ARM.exidx), (144 bytes).
+    Removing swm341_pwm.o(.text), (1630 bytes).
+    Removing swm341_pwm.o(.ARM.exidx), (224 bytes).
+    Removing swm341_can.o(.text), (1428 bytes).
+    Removing swm341_can.o(.ARM.exidx), (152 bytes).
+    Removing swm341_spi.o(.text), (1352 bytes).
+    Removing swm341_spi.o(.ARM.exidx), (160 bytes).
+    Removing swm341_lcd.o(.ARM.exidx), (136 bytes).
+    Removing swm341_flash.o(.ARM.exidx), (24 bytes).
+    Removing swm341_flash.o(.rodata.IAP_Cache_Reset), (4 bytes).
+    Removing swm341_flash.o(.rodata.IAP_Flash_Param), (4 bytes).
+    Removing swm341_flash.o(.rodata.IAP_Flash_Erase), (4 bytes).
+    Removing swm341_flash.o(.rodata.IAP_Flash_Write), (4 bytes).
+    Removing swm341_rtc.o(.text), (1332 bytes).
+    Removing swm341_rtc.o(.ARM.exidx), (224 bytes).
+    Removing swm341_rtc.o(.rodata..L__const.calcWeekDay.daysOfMonth), (52 bytes).
+    Removing swm341_crc.o(.text), (130 bytes).
+    Removing swm341_crc.o(.ARM.exidx), (16 bytes).
+    Removing swm341_wdt.o(.text), (340 bytes).
+    Removing swm341_wdt.o(.ARM.exidx), (64 bytes).
+    Removing swm341_cordic.o(.text), (40 bytes).
+    Removing swm341_cordic.o(.ARM.exidx), (8 bytes).
+    Removing swm341_sleep.o(.text), (0 bytes).
+    Removing swm341_usbd.o(.text), (2748 bytes).
+    Removing swm341_usbd.o(.ARM.exidx), (160 bytes).
+    Removing swm341_usbd.o(.bss.USBD_Info), (40 bytes).
+    Removing swm341_usbd.o(.bss.Setup_Packet), (8 bytes).
+    Removing swm341_usbd.o(.data.pUSB_Setup), (4 bytes).
+    Removing swm341_usbd.o(.bss.CtrlIn_Ptr), (4 bytes).
+    Removing swm341_usbd.o(.bss.CtrlIn_Size), (4 bytes).
+    Removing swm341_usbd.o(.bss.USBD_CtrlIn.ZeroLenPk), (1 bytes).
+    Removing swm341_usbd.o(.bss.CtrlOut_Ptr), (4 bytes).
+    Removing swm341_usbd.o(.bss.CtrlOut_Size), (4 bytes).
+    Removing swm341_usbd.o(.bss.CtrlOut_Limit), (4 bytes).
+    Removing swm341_div.o(.text), (40 bytes).
+    Removing swm341_div.o(.ARM.exidx), (8 bytes).
+    Removing swm341_sdram.o(.ARM.exidx), (24 bytes).
+    Removing swm341_sdio.o(.ARM.exidx), (88 bytes).
+    Removing swm341_dac.o(.text), (122 bytes).
+    Removing swm341_dac.o(.ARM.exidx), (24 bytes).
+    Removing swm341_jpeg.o(.ARM.exidx), (40 bytes).
+    Removing swm341_dma2d.o(.ARM.exidx), (88 bytes).
+    Removing system_swm341.o(.ARM.exidx), (104 bytes).
+    Removing kd028_st7701s.o(.text), (0 bytes).
+    Removing kd034_st7701s.o(.ARM.exidx), (56 bytes).
+
+69 unused section(s) (total 20469 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloc.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocr.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  malloca.o ABSOLUTE
+    ../clib/microlib/malloc/malloc.c         0x00000000   Number         0  mallocra.o ABSOLUTE
+    ../clib/microlib/malloc/mvars.c          0x00000000   Number         0  mvars.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/string/strcat.c         0x00000000   Number         0  strcat.o ABSOLUTE
+    ../clib/microlib/string/strcpy.c         0x00000000   Number         0  strcpy.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../mathlib/ceil.c                        0x00000000   Number         0  ceil.o ABSOLUTE
+    CSL/CMSIS/DeviceSupport/startup/arm/startup_SWM341.s 0x00000000   Number         0  startup_swm341.o ABSOLUTE
+    KD028_ST7701S.c                          0x00000000   Number         0  kd028_st7701s.o ABSOLUTE
+    KD034_ST7701S.c                          0x00000000   Number         0  kd034_st7701s.o ABSOLUTE
+    SWM341_adc.c                             0x00000000   Number         0  swm341_adc.o ABSOLUTE
+    SWM341_can.c                             0x00000000   Number         0  swm341_can.o ABSOLUTE
+    SWM341_cordic.c                          0x00000000   Number         0  swm341_cordic.o ABSOLUTE
+    SWM341_crc.c                             0x00000000   Number         0  swm341_crc.o ABSOLUTE
+    SWM341_dac.c                             0x00000000   Number         0  swm341_dac.o ABSOLUTE
+    SWM341_div.c                             0x00000000   Number         0  swm341_div.o ABSOLUTE
+    SWM341_dma.c                             0x00000000   Number         0  swm341_dma.o ABSOLUTE
+    SWM341_dma2d.c                           0x00000000   Number         0  swm341_dma2d.o ABSOLUTE
+    SWM341_exti.c                            0x00000000   Number         0  swm341_exti.o ABSOLUTE
+    SWM341_flash.c                           0x00000000   Number         0  swm341_flash.o ABSOLUTE
+    SWM341_gpio.c                            0x00000000   Number         0  swm341_gpio.o ABSOLUTE
+    SWM341_i2c.c                             0x00000000   Number         0  swm341_i2c.o ABSOLUTE
+    SWM341_jpeg.c                            0x00000000   Number         0  swm341_jpeg.o ABSOLUTE
+    SWM341_lcd.c                             0x00000000   Number         0  swm341_lcd.o ABSOLUTE
+    SWM341_port.c                            0x00000000   Number         0  swm341_port.o ABSOLUTE
+    SWM341_pwm.c                             0x00000000   Number         0  swm341_pwm.o ABSOLUTE
+    SWM341_rtc.c                             0x00000000   Number         0  swm341_rtc.o ABSOLUTE
+    SWM341_sdio.c                            0x00000000   Number         0  swm341_sdio.o ABSOLUTE
+    SWM341_sdram.c                           0x00000000   Number         0  swm341_sdram.o ABSOLUTE
+    SWM341_sleep.c                           0x00000000   Number         0  swm341_sleep.o ABSOLUTE
+    SWM341_spi.c                             0x00000000   Number         0  swm341_spi.o ABSOLUTE
+    SWM341_timr.c                            0x00000000   Number         0  swm341_timr.o ABSOLUTE
+    SWM341_uart.c                            0x00000000   Number         0  swm341_uart.o ABSOLUTE
+    SWM341_usbd.c                            0x00000000   Number         0  swm341_usbd.o ABSOLUTE
+    SWM341_wdt.c                             0x00000000   Number         0  swm341_wdt.o ABSOLUTE
+    cdrcmple.s                               0x00000000   Number         0  cdrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    diskio.c                                 0x00000000   Number         0  diskio.o ABSOLUTE
+    ff.c                                     0x00000000   Number         0  ff.o ABSOLUTE
+    ffunicode.c                              0x00000000   Number         0  ffunicode.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    jfif_parser.c                            0x00000000   Number         0  jfif_parser.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    swm_delay.c                              0x00000000   Number         0  swm_delay.o ABSOLUTE
+    swm_dma2d.c                              0x00000000   Number         0  swm_dma2d.o ABSOLUTE
+    swm_rgb_lcd.c                            0x00000000   Number         0  swm_rgb_lcd.o ABSOLUTE
+    swm_usart.c                              0x00000000   Number         0  swm_usart.o ABSOLUTE
+    system_SWM341.c                          0x00000000   Number         0  system_swm341.o ABSOLUTE
+    RESET                                    0x00000000   Section      424  startup_swm341.o(RESET)
+    .ARM.Collect$$$$00000000                 0x000001a8   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000001a8   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000001ac   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000001b0   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000001b0   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000001b0   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    __lit__00000000                          0x000001b8   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .ARM.Collect$$$$0000000D                 0x000001b8   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000001b8   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000001b8   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    [Anonymous Symbol]                       0x000001bc   Section        0  main.o(.text)
+    [Anonymous Symbol]                       0x0000054c   Section        0  swm_delay.o(.text)
+    SysTick_Config                           0x00000595   Thumb Code    84  swm_delay.o(.text)
+    __NVIC_SetPriority                       0x00000795   Thumb Code    66  swm_delay.o(.text)
+    [Anonymous Symbol]                       0x000007d8   Section        0  swm_rgb_lcd.o(.text)
+    MemoryInit                               0x00000a61   Thumb Code   572  swm_rgb_lcd.o(.text)
+    [Anonymous Symbol]                       0x00000cb8   Section        0  swm_usart.o(.text)
+    [Anonymous Symbol]                       0x00000d4c   Section        0  swm_dma2d.o(.text)
+    [Anonymous Symbol]                       0x00000e64   Section        0  jfif_parser.o(.text)
+    [Anonymous Symbol]                       0x00001514   Section        0  diskio.o(.text)
+    [Anonymous Symbol]                       0x00001830   Section        0  ff.o(.text)
+    get_ldnumber                             0x000018c9   Thumb Code   402  ff.o(.text)
+    mount_volume                             0x00001a5d   Thumb Code  1056  ff.o(.text)
+    follow_path                              0x000021b9   Thumb Code   254  ff.o(.text)
+    dir_register                             0x000022b9   Thumb Code   528  ff.o(.text)
+    ld_clust                                 0x000024c9   Thumb Code    54  ff.o(.text)
+    st_dword                                 0x00002501   Thumb Code    68  ff.o(.text)
+    st_clust                                 0x00002545   Thumb Code    50  ff.o(.text)
+    remove_chain                             0x00002579   Thumb Code   244  ff.o(.text)
+    move_window                              0x0000266d   Thumb Code    94  ff.o(.text)
+    ld_dword                                 0x000026cd   Thumb Code    52  ff.o(.text)
+    mem_set                                  0x00002701   Thumb Code    42  ff.o(.text)
+    get_fat                                  0x0000272d   Thumb Code   306  ff.o(.text)
+    clst2sect                                0x00002861   Thumb Code    54  ff.o(.text)
+    validate                                 0x00002b05   Thumb Code   114  ff.o(.text)
+    mem_cpy                                  0x00002b79   Thumb Code    60  ff.o(.text)
+    create_chain                             0x00002e8d   Thumb Code   482  ff.o(.text)
+    st_word                                  0x0000315d   Thumb Code    44  ff.o(.text)
+    sync_fs                                  0x00003189   Thumb Code   200  ff.o(.text)
+    dir_sdi                                  0x000035e5   Thumb Code   282  ff.o(.text)
+    dir_read                                 0x000037b9   Thumb Code   388  ff.o(.text)
+    get_fileinfo                             0x0000393d   Thumb Code   596  ff.o(.text)
+    dir_next                                 0x00003b91   Thumb Code   344  ff.o(.text)
+    ld_word                                  0x00003ead   Thumb Code    36  ff.o(.text)
+    dir_remove                               0x0000413d   Thumb Code   166  ff.o(.text)
+    dir_clear                                0x00004365   Thumb Code   164  ff.o(.text)
+    create_partition                         0x00004f19   Thumb Code   648  ff.o(.text)
+    find_volume                              0x000051a1   Thumb Code   224  ff.o(.text)
+    check_fs                                 0x00005281   Thumb Code   172  ff.o(.text)
+    mem_cmp                                  0x0000532d   Thumb Code    86  ff.o(.text)
+    create_name                              0x00005385   Thumb Code  1122  ff.o(.text)
+    dir_find                                 0x000057e9   Thumb Code   450  ff.o(.text)
+    tchar2uni                                0x000059ad   Thumb Code   152  ff.o(.text)
+    chk_chr                                  0x00005a45   Thumb Code    60  ff.o(.text)
+    dbc_1st                                  0x00005a81   Thumb Code    32  ff.o(.text)
+    dbc_2nd                                  0x00005aa1   Thumb Code    32  ff.o(.text)
+    cmp_lfn                                  0x00005ac1   Thumb Code   238  ff.o(.text)
+    sum_sfn                                  0x00005bb1   Thumb Code    62  ff.o(.text)
+    gen_numname                              0x00005bf1   Thumb Code   364  ff.o(.text)
+    dir_alloc                                0x00005d5d   Thumb Code   162  ff.o(.text)
+    put_lfn                                  0x00005e01   Thumb Code   210  ff.o(.text)
+    put_fat                                  0x00005ed5   Thumb Code   434  ff.o(.text)
+    sync_window                              0x00006089   Thumb Code   116  ff.o(.text)
+    pick_lfn                                 0x000060fd   Thumb Code   226  ff.o(.text)
+    put_utf                                  0x000061e1   Thumb Code   134  ff.o(.text)
+    [Anonymous Symbol]                       0x00006268   Section        0  ffunicode.o(.text)
+    [Anonymous Symbol]                       0x000064b8   Section        0  swm341_port.o(.text)
+    [Anonymous Symbol]                       0x00006554   Section        0  swm341_gpio.o(.text)
+    [Anonymous Symbol]                       0x00006964   Section        0  swm341_uart.o(.text)
+    __NVIC_EnableIRQ                         0x00006b89   Thumb Code    48  swm341_uart.o(.text)
+    __NVIC_DisableIRQ                        0x00006bb9   Thumb Code    56  swm341_uart.o(.text)
+    [Anonymous Symbol]                       0x00006f7c   Section        0  swm341_lcd.o(.text)
+    __NVIC_EnableIRQ                         0x0000708d   Thumb Code    48  swm341_lcd.o(.text)
+    [Anonymous Symbol]                       0x000073a8   Section        0  swm341_flash.o(.text)
+    [Anonymous Symbol]                       0x00007554   Section        0  swm341_sdram.o(.text)
+    [Anonymous Symbol]                       0x000076b8   Section        0  swm341_sdio.o(.text)
+    [Anonymous Symbol]                       0x00008558   Section        0  swm341_jpeg.o(.text)
+    __NVIC_EnableIRQ                         0x000085d5   Thumb Code    48  swm341_jpeg.o(.text)
+    __NVIC_DisableIRQ                        0x00008605   Thumb Code    56  swm341_jpeg.o(.text)
+    [Anonymous Symbol]                       0x00008fd0   Section        0  swm341_dma2d.o(.text)
+    __NVIC_EnableIRQ                         0x00009031   Thumb Code    48  swm341_dma2d.o(.text)
+    [Anonymous Symbol]                       0x00009318   Section        0  system_swm341.o(.text)
+    delay_3ms                                0x00009609   Thumb Code   118  system_swm341.o(.text)
+    .text                                    0x0000991c   Section      216  startup_swm341.o(.text)
+    [Anonymous Symbol]                       0x000099f4   Section        0  kd034_st7701s.o(.text)
+    write_command                            0x00009a1d   Thumb Code   162  kd034_st7701s.o(.text)
+    spi_gpio_config                          0x00009ad9   Thumb Code   142  kd034_st7701s.o(.text)
+    lcd_spi_init                             0x00009b69   Thumb Code  1430  kd034_st7701s.o(.text)
+    write_data                               0x0000a101   Thumb Code   162  kd034_st7701s.o(.text)
+    .text                                    0x0000a1a2   Section        0  memcpya.o(.text)
+    .text                                    0x0000a1c6   Section        0  memseta.o(.text)
+    .text                                    0x0000a1ea   Section        0  strcat.o(.text)
+    .text                                    0x0000a202   Section        0  strlen.o(.text)
+    .text                                    0x0000a210   Section        0  strcpy.o(.text)
+    .text                                    0x0000a222   Section        0  ddiv.o(.text)
+    .text                                    0x0000a300   Section        0  dflti.o(.text)
+    .text                                    0x0000a322   Section        0  dfixi.o(.text)
+    .text                                    0x0000a360   Section        0  uidiv.o(.text)
+    .text                                    0x0000a38c   Section        0  uldiv.o(.text)
+    .text                                    0x0000a3ee   Section        0  llushr.o(.text)
+    .text                                    0x0000a40e   Section        0  iusefp.o(.text)
+    .text                                    0x0000a40e   Section        0  depilogue.o(.text)
+    .text                                    0x0000a4c8   Section        0  dadd.o(.text)
+    .text                                    0x0000a616   Section        0  dmul.o(.text)
+    .text                                    0x0000a6fa   Section        0  dfixul.o(.text)
+    .text                                    0x0000a72c   Section       48  cdrcmple.o(.text)
+    .text                                    0x0000a75c   Section       36  init.o(.text)
+    .text                                    0x0000a780   Section        0  llshl.o(.text)
+    .text                                    0x0000a79e   Section        0  llsshr.o(.text)
+    i.__0printf                              0x0000a7c4   Section        0  printfa.o(i.__0printf)
+    i.__scatterload_copy                     0x0000a7e4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0000a7f2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0000a7f4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    _fp_digits                               0x0000a805   Thumb Code   366  printfa.o(i._fp_digits)
+    i._fp_digits                             0x0000a804   Section        0  printfa.o(i._fp_digits)
+    _printf_core                             0x0000a989   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_core                           0x0000a988   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x0000b065   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x0000b064   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x0000b089   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x0000b088   Section        0  printfa.o(i._printf_pre_padding)
+    i.ceil                                   0x0000b0b8   Section        0  ceil.o(i.ceil)
+    i.malloc                                 0x0000b194   Section        0  malloc.o(i.malloc)
+    ExCvt                                    0x0000b200   Data         128  ff.o(.rodata.ExCvt)
+    [Anonymous Symbol]                       0x0000b200   Section        0  ff.o(.rodata.ExCvt)
+    LfnOfs                                   0x0000b280   Data          13  ff.o(.rodata.LfnOfs)
+    [Anonymous Symbol]                       0x0000b280   Section        0  ff.o(.rodata.LfnOfs)
+    VolumeStr                                0x0000b290   Data          12  ff.o(.rodata.VolumeStr)
+    [Anonymous Symbol]                       0x0000b290   Section        0  ff.o(.rodata.VolumeStr)
+    f_mkfs.cst                               0x0000b29c   Data          14  ff.o(.rodata.f_mkfs.cst)
+    [Anonymous Symbol]                       0x0000b29c   Section        0  ff.o(.rodata.f_mkfs.cst)
+    f_mkfs.cst32                             0x0000b2aa   Data          14  ff.o(.rodata.f_mkfs.cst32)
+    [Anonymous Symbol]                       0x0000b2aa   Section        0  ff.o(.rodata.f_mkfs.cst32)
+    f_mkfs.defopt                            0x0000b2b8   Data          16  ff.o(.rodata.f_mkfs.defopt)
+    [Anonymous Symbol]                       0x0000b2b8   Section        0  ff.o(.rodata.f_mkfs.defopt)
+    ff_wtoupper.cvt1                         0x0000b2c8   Data         498  ffunicode.o(.rodata.ff_wtoupper.cvt1)
+    [Anonymous Symbol]                       0x0000b2c8   Section        0  ffunicode.o(.rodata.ff_wtoupper.cvt1)
+    ff_wtoupper.cvt2                         0x0000b4ba   Data         188  ffunicode.o(.rodata.ff_wtoupper.cvt2)
+    [Anonymous Symbol]                       0x0000b4ba   Section        0  ffunicode.o(.rodata.ff_wtoupper.cvt2)
+    .L.str                                   0x0000b576   Data          13  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0000b576   Section        0  main.o(.rodata.str1.1)
+    .L.str.5                                 0x0000b583   Data          16  main.o(.rodata.str1.1)
+    .L.str.2                                 0x0000b593   Data          22  main.o(.rodata.str1.1)
+    .L.str.4                                 0x0000b5a9   Data          19  main.o(.rodata.str1.1)
+    .L.str.1                                 0x0000b5bc   Data          22  main.o(.rodata.str1.1)
+    .L.str.11                                0x0000b5d2   Data           9  main.o(.rodata.str1.1)
+    .L.str.12                                0x0000b5db   Data          16  main.o(.rodata.str1.1)
+    .L.str.7                                 0x0000b5eb   Data          10  main.o(.rodata.str1.1)
+    .L.str.8                                 0x0000b5f5   Data           6  main.o(.rodata.str1.1)
+    .L.str.13                                0x0000b5fb   Data           6  main.o(.rodata.str1.1)
+    .L.str.3                                 0x0000b601   Data           4  main.o(.rodata.str1.1)
+    .L__const.itoa.index                     0x0000b605   Data          37  main.o(.rodata.str1.1)
+    .L.str.6                                 0x0000b62a   Data           5  main.o(.rodata.str1.1)
+    .L.str.10                                0x0000b62f   Data           6  main.o(.rodata.str1.1)
+    .L.str.9                                 0x0000b635   Data           3  main.o(.rodata.str1.1)
+    .L.str.2                                 0x0000b638   Data          20  ff.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0000b638   Section        0  ff.o(.rodata.str1.1)
+    .L.str.1                                 0x0000b64c   Data          20  ff.o(.rodata.str1.1)
+    .L.str                                   0x0000b660   Data          12  ff.o(.rodata.str1.1)
+    .L.str.7                                 0x0000b66c   Data           6  ff.o(.rodata.str1.1)
+    .L.str.6                                 0x0000b672   Data           4  ff.o(.rodata.str1.1)
+    .L.str.9                                 0x0000b676   Data           7  ff.o(.rodata.str1.1)
+    .L.str.8                                 0x0000b688   Data           9  ff.o(.rodata.str1.1)
+    uc437                                    0x0000b692   Data         256  ffunicode.o(.rodata.uc437)
+    [Anonymous Symbol]                       0x0000b692   Section        0  ffunicode.o(.rodata.uc437)
+    .data                                    0x20000000   Section        4  stdout.o(.data)
+    .data                                    0x20000004   Section        4  mvars.o(.data)
+    .data                                    0x20000008   Section        4  mvars.o(.data)
+    FatFs                                    0x20000020   Data          12  ff.o(.bss.FatFs)
+    [Anonymous Symbol]                       0x20000020   Section        0  ff.o(.bss.FatFs)
+    Fsid                                     0x2000002c   Data           2  ff.o(.bss.Fsid)
+    [Anonymous Symbol]                       0x2000002c   Section        0  ff.o(.bss.Fsid)
+    LfnBuf                                   0x2000002e   Data         512  ff.o(.bss.LfnBuf)
+    [Anonymous Symbol]                       0x2000002e   Section        0  ff.o(.bss.LfnBuf)
+    fac_ms                                   0x20000280   Data           4  swm_delay.o(.bss.fac_ms)
+    [Anonymous Symbol]                       0x20000280   Section        0  swm_delay.o(.bss.fac_ms)
+    fac_us                                   0x20000284   Data           4  swm_delay.o(.bss.fac_us)
+    [Anonymous Symbol]                       0x20000284   Section        0  swm_delay.o(.bss.fac_us)
+    sd_initialized                           0x20000b50   Data           4  diskio.o(.bss.sd_initialized)
+    [Anonymous Symbol]                       0x20000b50   Section        0  diskio.o(.bss.sd_initialized)
+    HEAP                                     0x20000b58   Section        0  startup_swm341.o(HEAP)
+    STACK                                    0x20000b58   Section    16384  startup_swm341.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$8M$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEJ$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_swm341.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_End                            0x000001a8   Data           0  startup_swm341.o(RESET)
+    __Vectors_Size                           0x000001a8   Number         0  startup_swm341.o ABSOLUTE
+    __main                                   0x000001a9   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000001a9   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000001ad   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000001b1   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000001b1   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000001b1   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000001b1   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000001b9   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000001b9   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    main                                     0x000001bd   Thumb Code   662  main.o(.text)
+    itoa                                     0x00000455   Thumb Code   248  main.o(.text)
+    delay_init                               0x0000054d   Thumb Code    72  swm_delay.o(.text)
+    delay_us                                 0x000005e9   Thumb Code   144  swm_delay.o(.text)
+    delay_ms                                 0x00000679   Thumb Code   220  swm_delay.o(.text)
+    delay_sec                                0x00000755   Thumb Code    64  swm_delay.o(.text)
+    RGBLCDInit                               0x000007d9   Thumb Code   646  swm_rgb_lcd.o(.text)
+    LCD_Handler                              0x00000c9d   Thumb Code    28  swm_rgb_lcd.o(.text)
+    SerialInit                               0x00000cb9   Thumb Code    96  swm_usart.o(.text)
+    fputc                                    0x00000d19   Thumb Code    50  swm_usart.o(.text)
+    swm_dma2d_init                           0x00000d4d   Thumb Code   166  swm_dma2d.o(.text)
+    dma2d_test_show                          0x00000df5   Thumb Code   102  swm_dma2d.o(.text)
+    DMA2D_Handler                            0x00000e5d   Thumb Code     8  swm_dma2d.o(.text)
+    jfif_parse                               0x00000e65   Thumb Code  1710  jfif_parser.o(.text)
+    disk_status                              0x00001515   Thumb Code   122  diskio.o(.text)
+    disk_initialize                          0x00001591   Thumb Code   248  diskio.o(.text)
+    disk_read                                0x00001689   Thumb Code   158  diskio.o(.text)
+    disk_write                               0x00001729   Thumb Code   158  diskio.o(.text)
+    disk_ioctl                               0x000017c9   Thumb Code   104  diskio.o(.text)
+    f_mount                                  0x00001831   Thumb Code   150  ff.o(.text)
+    f_open                                   0x00001e7d   Thumb Code   826  ff.o(.text)
+    f_read                                   0x00002899   Thumb Code   620  ff.o(.text)
+    f_write                                  0x00002bb5   Thumb Code   726  ff.o(.text)
+    f_sync                                   0x00003071   Thumb Code   234  ff.o(.text)
+    f_close                                  0x00003251   Thumb Code    62  ff.o(.text)
+    f_lseek                                  0x00003291   Thumb Code   638  ff.o(.text)
+    f_opendir                                0x00003511   Thumb Code   210  ff.o(.text)
+    f_closedir                               0x00003701   Thumb Code    42  ff.o(.text)
+    f_readdir                                0x0000372d   Thumb Code   138  ff.o(.text)
+    f_stat                                   0x00003ce9   Thumb Code   100  ff.o(.text)
+    f_getfree                                0x00003d4d   Thumb Code   352  ff.o(.text)
+    f_truncate                               0x00003ed1   Thumb Code   326  ff.o(.text)
+    f_unlink                                 0x00004019   Thumb Code   292  ff.o(.text)
+    f_mkdir                                  0x000041e5   Thumb Code   382  ff.o(.text)
+    f_rename                                 0x00004409   Thumb Code   442  ff.o(.text)
+    f_mkfs                                   0x000045c5   Thumb Code  2386  ff.o(.text)
+    ff_uni2oem                               0x00006269   Thumb Code   152  ffunicode.o(.text)
+    ff_oem2uni                               0x00006301   Thumb Code   104  ffunicode.o(.text)
+    ff_wtoupper                              0x00006369   Thumb Code   336  ffunicode.o(.text)
+    PORT_Init                                0x000064b9   Thumb Code   156  swm341_port.o(.text)
+    GPIO_Init                                0x00006555   Thumb Code   518  swm341_gpio.o(.text)
+    GPIO_SetBit                              0x0000675d   Thumb Code    26  swm341_gpio.o(.text)
+    GPIO_ClrBit                              0x00006779   Thumb Code    26  swm341_gpio.o(.text)
+    GPIO_InvBit                              0x00006795   Thumb Code    26  swm341_gpio.o(.text)
+    GPIO_GetBit                              0x000067b1   Thumb Code    22  swm341_gpio.o(.text)
+    GPIO_SetBits                             0x000067c9   Thumb Code    42  swm341_gpio.o(.text)
+    GPIO_ClrBits                             0x000067f5   Thumb Code    42  swm341_gpio.o(.text)
+    GPIO_InvBits                             0x00006821   Thumb Code    42  swm341_gpio.o(.text)
+    GPIO_GetBits                             0x0000684d   Thumb Code    38  swm341_gpio.o(.text)
+    GPIO_AtomicSetBit                        0x00006875   Thumb Code    22  swm341_gpio.o(.text)
+    GPIO_AtomicClrBit                        0x0000688d   Thumb Code    22  swm341_gpio.o(.text)
+    GPIO_AtomicInvBit                        0x000068a5   Thumb Code    34  swm341_gpio.o(.text)
+    GPIO_AtomicSetBits                       0x000068c9   Thumb Code    52  swm341_gpio.o(.text)
+    GPIO_AtomicClrBits                       0x000068fd   Thumb Code    52  swm341_gpio.o(.text)
+    GPIO_AtomicInvBits                       0x00006931   Thumb Code    52  swm341_gpio.o(.text)
+    UART_Init                                0x00006965   Thumb Code   526  swm341_uart.o(.text)
+    UART_Close                               0x00006b75   Thumb Code    18  swm341_uart.o(.text)
+    UART_Open                                0x00006bf1   Thumb Code    18  swm341_uart.o(.text)
+    UART_WriteByte                           0x00006c05   Thumb Code    20  swm341_uart.o(.text)
+    UART_ReadByte                            0x00006c19   Thumb Code    52  swm341_uart.o(.text)
+    UART_IsTXBusy                            0x00006c4d   Thumb Code    16  swm341_uart.o(.text)
+    UART_IsRXFIFOEmpty                       0x00006c5d   Thumb Code    22  swm341_uart.o(.text)
+    UART_IsTXFIFOFull                        0x00006c75   Thumb Code    16  swm341_uart.o(.text)
+    UART_SetBaudrate                         0x00006c85   Thumb Code    54  swm341_uart.o(.text)
+    UART_GetBaudrate                         0x00006cbd   Thumb Code    42  swm341_uart.o(.text)
+    UART_CTSConfig                           0x00006ce9   Thumb Code    38  swm341_uart.o(.text)
+    UART_CTSLineState                        0x00006d11   Thumb Code    16  swm341_uart.o(.text)
+    UART_RTSConfig                           0x00006d21   Thumb Code    48  swm341_uart.o(.text)
+    UART_RTSLineState                        0x00006d51   Thumb Code    16  swm341_uart.o(.text)
+    UART_LINConfig                           0x00006d61   Thumb Code    78  swm341_uart.o(.text)
+    UART_LINGenerate                         0x00006db1   Thumb Code    18  swm341_uart.o(.text)
+    UART_LINIsDetected                       0x00006dc5   Thumb Code    16  swm341_uart.o(.text)
+    UART_LINIsGenerated                      0x00006dd5   Thumb Code    16  swm341_uart.o(.text)
+    UART_ABRStart                            0x00006de5   Thumb Code   144  swm341_uart.o(.text)
+    UART_ABRIsDone                           0x00006e75   Thumb Code    52  swm341_uart.o(.text)
+    UART_INTEn                               0x00006ea9   Thumb Code    20  swm341_uart.o(.text)
+    UART_INTDis                              0x00006ebd   Thumb Code    20  swm341_uart.o(.text)
+    UART_INTClr                              0x00006ed1   Thumb Code    34  swm341_uart.o(.text)
+    UART_INTStat                             0x00006ef5   Thumb Code   134  swm341_uart.o(.text)
+    LCD_Init                                 0x00006f7d   Thumb Code   270  swm341_lcd.o(.text)
+    LCD_LayerInit                            0x000070bd   Thumb Code   110  swm341_lcd.o(.text)
+    LCD_SetLayerPos                          0x0000712d   Thumb Code   100  swm341_lcd.o(.text)
+    LCD_Start                                0x00007191   Thumb Code    18  swm341_lcd.o(.text)
+    LCD_IsBusy                               0x000071a5   Thumb Code    16  swm341_lcd.o(.text)
+    LCD_INTEn                                0x000071b5   Thumb Code    14  swm341_lcd.o(.text)
+    LCD_INTDis                               0x000071c5   Thumb Code    14  swm341_lcd.o(.text)
+    LCD_INTClr                               0x000071d5   Thumb Code    14  swm341_lcd.o(.text)
+    LCD_INTStat                              0x000071e5   Thumb Code    16  swm341_lcd.o(.text)
+    MPULCD_Init                              0x000071f5   Thumb Code   156  swm341_lcd.o(.text)
+    LCD_WR_REG                               0x00007291   Thumb Code    40  swm341_lcd.o(.text)
+    LCD_WR_DATA                              0x000072b9   Thumb Code    40  swm341_lcd.o(.text)
+    LCD_WriteReg                             0x000072e1   Thumb Code    70  swm341_lcd.o(.text)
+    LCD_ReadReg                              0x00007329   Thumb Code    48  swm341_lcd.o(.text)
+    MPULCD_DMAStart                          0x00007359   Thumb Code    64  swm341_lcd.o(.text)
+    MPULCD_DMABusy                           0x00007399   Thumb Code    16  swm341_lcd.o(.text)
+    FLASH_Erase                              0x000073a9   Thumb Code    94  swm341_flash.o(.text)
+    FLASH_Write                              0x00007409   Thumb Code   118  swm341_flash.o(.text)
+    Flash_Param_at_xMHz                      0x00007481   Thumb Code   212  swm341_flash.o(.text)
+    SDRAM_Init                               0x00007555   Thumb Code   258  swm341_sdram.o(.text)
+    SDRAM_Enable                             0x00007659   Thumb Code    46  swm341_sdram.o(.text)
+    SDRAM_Disable                            0x00007689   Thumb Code    46  swm341_sdram.o(.text)
+    SDIO_Init                                0x000076b9   Thumb Code   826  swm341_sdio.o(.text)
+    calcSDCLKDiv                             0x000079f5   Thumb Code   220  swm341_sdio.o(.text)
+    _SDIO_SendCmd                            0x00007ad1   Thumb Code   372  swm341_sdio.o(.text)
+    parseCID                                 0x00007c45   Thumb Code   314  swm341_sdio.o(.text)
+    parseCSD                                 0x00007d81   Thumb Code   798  swm341_sdio.o(.text)
+    SDIO_BlockWrite                          0x000080a1   Thumb Code   206  swm341_sdio.o(.text)
+    SDIO_MultiBlockWrite                     0x00008171   Thumb Code   248  swm341_sdio.o(.text)
+    SDIO_DMABlockWrite                       0x00008269   Thumb Code   148  swm341_sdio.o(.text)
+    SDIO_BlockRead                           0x000082fd   Thumb Code   206  swm341_sdio.o(.text)
+    SDIO_MultiBlockRead                      0x000083cd   Thumb Code   248  swm341_sdio.o(.text)
+    SDIO_DMABlockRead                        0x000084c5   Thumb Code   146  swm341_sdio.o(.text)
+    JPEG_Init                                0x00008559   Thumb Code   124  swm341_jpeg.o(.text)
+    JPEG_Decode                              0x0000863d   Thumb Code  2436  swm341_jpeg.o(.text)
+    JPEG_DecodeBusy                          0x00008fc1   Thumb Code    16  swm341_jpeg.o(.text)
+    DMA2D_Init                               0x00008fd1   Thumb Code    96  swm341_dma2d.o(.text)
+    DMA2D_PixelFill                          0x00009061   Thumb Code   120  swm341_dma2d.o(.text)
+    DMA2D_PixelMove                          0x000090d9   Thumb Code   134  swm341_dma2d.o(.text)
+    DMA2D_PixelConvert                       0x00009161   Thumb Code   150  swm341_dma2d.o(.text)
+    DMA2D_PixelBlend                         0x000091f9   Thumb Code   206  swm341_dma2d.o(.text)
+    DMA2D_IsBusy                             0x000092c9   Thumb Code    16  swm341_dma2d.o(.text)
+    DMA2D_INTEn                              0x000092d9   Thumb Code    14  swm341_dma2d.o(.text)
+    DMA2D_INTDis                             0x000092e9   Thumb Code    14  swm341_dma2d.o(.text)
+    DMA2D_INTClr                             0x000092f9   Thumb Code    14  swm341_dma2d.o(.text)
+    DMA2D_INTStat                            0x00009309   Thumb Code    16  swm341_dma2d.o(.text)
+    SystemCoreClockUpdate                    0x00009319   Thumb Code   386  system_swm341.o(.text)
+    SystemInit                               0x0000949d   Thumb Code   230  system_swm341.o(.text)
+    switchToPLL                              0x00009585   Thumb Code    94  system_swm341.o(.text)
+    FPU_Enable                               0x000095e5   Thumb Code     2  system_swm341.o(.text)
+    switchTo20MHz                            0x000095e9   Thumb Code    32  system_swm341.o(.text)
+    switchTo2M5Hz                            0x00009681   Thumb Code    66  system_swm341.o(.text)
+    switchTo40MHz                            0x000096c5   Thumb Code    32  system_swm341.o(.text)
+    switchTo5MHz                             0x000096e5   Thumb Code    66  system_swm341.o(.text)
+    switchToXTAL                             0x00009729   Thumb Code   152  system_swm341.o(.text)
+    PLLInit                                  0x000097c1   Thumb Code   162  system_swm341.o(.text)
+    switchTo32KHz                            0x00009865   Thumb Code    72  system_swm341.o(.text)
+    switchToXTAL_32K                         0x000098ad   Thumb Code   112  system_swm341.o(.text)
+    Reset_Handler                            0x0000991d   Thumb Code     8  startup_swm341.o(.text)
+    NMI_Handler                              0x00009925   Thumb Code     2  startup_swm341.o(.text)
+    HardFault_Handler                        0x00009927   Thumb Code     2  startup_swm341.o(.text)
+    MemManage_Handler                        0x00009929   Thumb Code     2  startup_swm341.o(.text)
+    BusFault_Handler                         0x0000992b   Thumb Code     2  startup_swm341.o(.text)
+    UsageFault_Handler                       0x0000992d   Thumb Code     2  startup_swm341.o(.text)
+    SVC_Handler                              0x0000992f   Thumb Code     2  startup_swm341.o(.text)
+    DebugMon_Handler                         0x00009931   Thumb Code     2  startup_swm341.o(.text)
+    PendSV_Handler                           0x00009933   Thumb Code     2  startup_swm341.o(.text)
+    SysTick_Handler                          0x00009935   Thumb Code     2  startup_swm341.o(.text)
+    UART0_Handler                            0x00009937   Thumb Code     2  startup_swm341.o(.text)
+    UART1_Handler                            0x00009939   Thumb Code     2  startup_swm341.o(.text)
+    TIMR0_Handler                            0x0000993b   Thumb Code     2  startup_swm341.o(.text)
+    TIMR1_Handler                            0x0000993d   Thumb Code     2  startup_swm341.o(.text)
+    DMA_Handler                              0x0000993f   Thumb Code     2  startup_swm341.o(.text)
+    SPI0_Handler                             0x00009941   Thumb Code     2  startup_swm341.o(.text)
+    PWM0_Handler                             0x00009943   Thumb Code     2  startup_swm341.o(.text)
+    WDT_Handler                              0x00009945   Thumb Code     2  startup_swm341.o(.text)
+    UART2_Handler                            0x00009947   Thumb Code     2  startup_swm341.o(.text)
+    PWM1_Handler                             0x00009949   Thumb Code     2  startup_swm341.o(.text)
+    ADC0_Handler                             0x0000994b   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR0_Handler                           0x0000994d   Thumb Code     2  startup_swm341.o(.text)
+    HALL0_Handler                            0x0000994f   Thumb Code     2  startup_swm341.o(.text)
+    PWM2_Handler                             0x00009951   Thumb Code     2  startup_swm341.o(.text)
+    PWMBRK_Handler                           0x00009953   Thumb Code     2  startup_swm341.o(.text)
+    I2C0_Handler                             0x00009955   Thumb Code     2  startup_swm341.o(.text)
+    CAN0_Handler                             0x00009957   Thumb Code     2  startup_swm341.o(.text)
+    SPI1_Handler                             0x00009959   Thumb Code     2  startup_swm341.o(.text)
+    RTC_Handler                              0x0000995b   Thumb Code     2  startup_swm341.o(.text)
+    PWM3_Handler                             0x0000995d   Thumb Code     2  startup_swm341.o(.text)
+    TIMR2_Handler                            0x0000995f   Thumb Code     2  startup_swm341.o(.text)
+    UART3_Handler                            0x00009961   Thumb Code     2  startup_swm341.o(.text)
+    TIMR3_Handler                            0x00009963   Thumb Code     2  startup_swm341.o(.text)
+    ADC1_Handler                             0x00009965   Thumb Code     2  startup_swm341.o(.text)
+    BOD_Handler                              0x00009967   Thumb Code     2  startup_swm341.o(.text)
+    CORDIC_Handler                           0x00009969   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR1_Handler                           0x0000996b   Thumb Code     2  startup_swm341.o(.text)
+    PWM4_Handler                             0x0000996d   Thumb Code     2  startup_swm341.o(.text)
+    HALL3_Handler                            0x0000996f   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR2_Handler                           0x00009971   Thumb Code     2  startup_swm341.o(.text)
+    I2C1_Handler                             0x00009973   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR3_Handler                           0x00009975   Thumb Code     2  startup_swm341.o(.text)
+    ACMP_Handler                             0x00009977   Thumb Code     2  startup_swm341.o(.text)
+    XTALSTOP_Handler                         0x00009979   Thumb Code     2  startup_swm341.o(.text)
+    FSPI_Handler                             0x0000997b   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA_Handler                            0x0000997d   Thumb Code     2  startup_swm341.o(.text)
+    GPIOB_Handler                            0x0000997f   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC_Handler                            0x00009981   Thumb Code     2  startup_swm341.o(.text)
+    GPIOD_Handler                            0x00009983   Thumb Code     2  startup_swm341.o(.text)
+    GPIOM_Handler                            0x00009985   Thumb Code     2  startup_swm341.o(.text)
+    GPION_Handler                            0x00009987   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA0_Handler                           0x00009989   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA1_Handler                           0x0000998b   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA5_Handler                           0x0000998d   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA6_Handler                           0x0000998f   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA10_Handler                          0x00009991   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA11_Handler                          0x00009993   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA12_Handler                          0x00009995   Thumb Code     2  startup_swm341.o(.text)
+    GPIOA13_Handler                          0x00009997   Thumb Code     2  startup_swm341.o(.text)
+    GPIOB0_Handler                           0x00009999   Thumb Code     2  startup_swm341.o(.text)
+    GPIOB1_Handler                           0x0000999b   Thumb Code     2  startup_swm341.o(.text)
+    GPIOB2_Handler                           0x0000999d   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC0_Handler                           0x0000999f   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC1_Handler                           0x000099a1   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC2_Handler                           0x000099a3   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC3_Handler                           0x000099a5   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC4_Handler                           0x000099a7   Thumb Code     2  startup_swm341.o(.text)
+    GPIOD3_Handler                           0x000099a9   Thumb Code     2  startup_swm341.o(.text)
+    GPIOD4_Handler                           0x000099ab   Thumb Code     2  startup_swm341.o(.text)
+    GPIOD5_Handler                           0x000099ad   Thumb Code     2  startup_swm341.o(.text)
+    GPIOD6_Handler                           0x000099af   Thumb Code     2  startup_swm341.o(.text)
+    GPIOD7_Handler                           0x000099b1   Thumb Code     2  startup_swm341.o(.text)
+    GPIOD8_Handler                           0x000099b3   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC9_Handler                           0x000099b5   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC10_Handler                          0x000099b7   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC11_Handler                          0x000099b9   Thumb Code     2  startup_swm341.o(.text)
+    GPIOC12_Handler                          0x000099bb   Thumb Code     2  startup_swm341.o(.text)
+    GPIOM0_Handler                           0x000099bd   Thumb Code     2  startup_swm341.o(.text)
+    GPIOM1_Handler                           0x000099bf   Thumb Code     2  startup_swm341.o(.text)
+    GPIOM2_Handler                           0x000099c1   Thumb Code     2  startup_swm341.o(.text)
+    GPIOM3_Handler                           0x000099c3   Thumb Code     2  startup_swm341.o(.text)
+    GPIOM4_Handler                           0x000099c5   Thumb Code     2  startup_swm341.o(.text)
+    DIV_Handler                              0x000099c7   Thumb Code     2  startup_swm341.o(.text)
+    GPIOE_Handler                            0x000099cb   Thumb Code     2  startup_swm341.o(.text)
+    JPEG_Handler                             0x000099cd   Thumb Code     2  startup_swm341.o(.text)
+    SDIO_Handler                             0x000099cf   Thumb Code     2  startup_swm341.o(.text)
+    USB_Handler                              0x000099d1   Thumb Code     2  startup_swm341.o(.text)
+    CAN1_Handler                             0x000099d3   Thumb Code     2  startup_swm341.o(.text)
+    TIMR4_Handler                            0x000099d5   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR4_Handler                           0x000099d7   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR5_Handler                           0x000099d9   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR6_Handler                           0x000099db   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR7_Handler                           0x000099dd   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR8_Handler                           0x000099df   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR9_Handler                           0x000099e1   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR10_Handler                          0x000099e3   Thumb Code     2  startup_swm341.o(.text)
+    BTIMR11_Handler                          0x000099e5   Thumb Code     2  startup_swm341.o(.text)
+    QEI_Handler                              0x000099e9   Thumb Code     2  startup_swm341.o(.text)
+    IC_LCD_Init                              0x000099f5   Thumb Code    16  kd034_st7701s.o(.text)
+    EnterSleep                               0x00009a05   Thumb Code    22  kd034_st7701s.o(.text)
+    ExitSleep                                0x00009ac1   Thumb Code    22  kd034_st7701s.o(.text)
+    __aeabi_memcpy                           0x0000a1a3   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0000a1a3   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0000a1a3   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x0000a1c7   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x0000a1c7   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x0000a1c7   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x0000a1d5   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x0000a1d5   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x0000a1d5   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x0000a1d9   Thumb Code    18  memseta.o(.text)
+    strcat                                   0x0000a1eb   Thumb Code    24  strcat.o(.text)
+    strlen                                   0x0000a203   Thumb Code    14  strlen.o(.text)
+    strcpy                                   0x0000a211   Thumb Code    18  strcpy.o(.text)
+    __aeabi_ddiv                             0x0000a223   Thumb Code   222  ddiv.o(.text)
+    __aeabi_i2d                              0x0000a301   Thumb Code    34  dflti.o(.text)
+    __aeabi_d2iz                             0x0000a323   Thumb Code    62  dfixi.o(.text)
+    __aeabi_uidiv                            0x0000a361   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x0000a361   Thumb Code    44  uidiv.o(.text)
+    __aeabi_uldivmod                         0x0000a38d   Thumb Code    98  uldiv.o(.text)
+    __aeabi_llsr                             0x0000a3ef   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x0000a3ef   Thumb Code     0  llushr.o(.text)
+    __I$use$fp                               0x0000a40f   Thumb Code     0  iusefp.o(.text)
+    _double_round                            0x0000a40f   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x0000a42d   Thumb Code   156  depilogue.o(.text)
+    __aeabi_dadd                             0x0000a4c9   Thumb Code   322  dadd.o(.text)
+    __aeabi_dsub                             0x0000a60b   Thumb Code     6  dadd.o(.text)
+    __aeabi_drsub                            0x0000a611   Thumb Code     6  dadd.o(.text)
+    __aeabi_dmul                             0x0000a617   Thumb Code   228  dmul.o(.text)
+    __aeabi_d2ulz                            0x0000a6fb   Thumb Code    48  dfixul.o(.text)
+    __aeabi_cdrcmple                         0x0000a72d   Thumb Code    48  cdrcmple.o(.text)
+    __scatterload                            0x0000a75d   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x0000a75d   Thumb Code     0  init.o(.text)
+    __aeabi_llsl                             0x0000a781   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x0000a781   Thumb Code     0  llshl.o(.text)
+    __aeabi_lasr                             0x0000a79f   Thumb Code    36  llsshr.o(.text)
+    _ll_sshift_r                             0x0000a79f   Thumb Code     0  llsshr.o(.text)
+    __0printf                                0x0000a7c5   Thumb Code    22  printfa.o(i.__0printf)
+    __1printf                                0x0000a7c5   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x0000a7c5   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x0000a7c5   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x0000a7c5   Thumb Code     0  printfa.o(i.__0printf)
+    __scatterload_copy                       0x0000a7e5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0000a7f3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0000a7f5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    ceil                                     0x0000b0b9   Thumb Code   204  ceil.o(i.ceil)
+    malloc                                   0x0000b195   Thumb Code    92  malloc.o(i.malloc)
+    Region$$Table$$Base                      0x0000b794   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0000b7b4   Number         0  anon$$obj.o(Region$$Table)
+    __stdout                                 0x20000000   Data           4  stdout.o(.data)
+    __microlib_freelist                      0x20000004   Data           4  mvars.o(.data)
+    __microlib_freelist_initialised          0x20000008   Data           4  mvars.o(.data)
+    CyclesPerUs                              0x2000000c   Data           4  system_swm341.o(.data.CyclesPerUs)
+    LCD_Buffer                               0x20000010   Data           4  swm_rgb_lcd.o(.data.LCD_Buffer)
+    SystemCoreClock                          0x20000014   Data           4  system_swm341.o(.data.SystemCoreClock)
+    jpeg_image_sdr                           0x20000018   Data           4  main.o(.data.jpeg_image_sdr)
+    SD_cardInfo                              0x20000230   Data          80  swm341_sdio.o(.bss.SD_cardInfo)
+    fatfs                                    0x20000288   Data         564  main.o(.bss.fatfs)
+    fgLayer                                  0x200004bc   Data          16  swm_dma2d.o(.bss.fgLayer)
+    jfif_info                                0x200004cc   Data        1652  main.o(.bss.jfif_info)
+    outLayer                                 0x20000b40   Data          16  swm_dma2d.o(.bss.outLayer)
+    __heap_base                              0x20000b58   Data           0  startup_swm341.o(HEAP)
+    __heap_limit                             0x20000b58   Data           0  startup_swm341.o(HEAP)
+    __initial_sp                             0x20004b58   Data           0  startup_swm341.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000001a9
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x0000b7d8, Max: 0x00080000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x0000b7b4, Max: 0x00080000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000001a8   Data   RO          285    RESET               startup_swm341.o
+    0x000001a8   0x000001a8   0x00000000   Code   RO          304  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x000001a8   0x000001a8   0x00000004   Code   RO          381    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x000001ac   0x000001ac   0x00000004   Code   RO          384    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          386    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x000001b0   0x000001b0   0x00000000   Code   RO          388    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x000001b0   0x000001b0   0x00000008   Code   RO          389    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          391    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x000001b8   0x000001b8   0x00000000   Code   RO          393    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x000001b8   0x000001b8   0x00000004   Code   RO          382    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x000001bc   0x000001bc   0x00000390   Code   RO            1    .text               main.o
+    0x0000054c   0x0000054c   0x0000028a   Code   RO           13    .text               swm_delay.o
+    0x000007d6   0x000007d6   0x00000002   PAD
+    0x000007d8   0x000007d8   0x000004e0   Code   RO           22    .text               swm_rgb_lcd.o
+    0x00000cb8   0x00000cb8   0x00000092   Code   RO           30    .text               swm_usart.o
+    0x00000d4a   0x00000d4a   0x00000002   PAD
+    0x00000d4c   0x00000d4c   0x00000118   Code   RO           37    .text               swm_dma2d.o
+    0x00000e64   0x00000e64   0x000006ae   Code   RO           48    .text               jfif_parser.o
+    0x00001512   0x00001512   0x00000002   PAD
+    0x00001514   0x00001514   0x0000031c   Code   RO           55    .text               diskio.o
+    0x00001830   0x00001830   0x00004a36   Code   RO           63    .text               ff.o
+    0x00006266   0x00006266   0x00000002   PAD
+    0x00006268   0x00006268   0x00000250   Code   RO           80    .text               ffunicode.o
+    0x000064b8   0x000064b8   0x0000009c   Code   RO           90    .text               swm341_port.o
+    0x00006554   0x00006554   0x00000410   Code   RO           97    .text               swm341_gpio.o
+    0x00006964   0x00006964   0x00000616   Code   RO          118    .text               swm341_uart.o
+    0x00006f7a   0x00006f7a   0x00000002   PAD
+    0x00006f7c   0x00006f7c   0x0000042c   Code   RO          167    .text               swm341_lcd.o
+    0x000073a8   0x000073a8   0x000001ac   Code   RO          174    .text               swm341_flash.o
+    0x00007554   0x00007554   0x00000162   Code   RO          238    .text               swm341_sdram.o
+    0x000076b6   0x000076b6   0x00000002   PAD
+    0x000076b8   0x000076b8   0x00000e9e   Code   RO          245    .text               swm341_sdio.o
+    0x00008556   0x00008556   0x00000002   PAD
+    0x00008558   0x00008558   0x00000a78   Code   RO          260    .text               swm341_jpeg.o
+    0x00008fd0   0x00008fd0   0x00000348   Code   RO          267    .text               swm341_dma2d.o
+    0x00009318   0x00009318   0x00000604   Code   RO          274    .text               system_swm341.o
+    0x0000991c   0x0000991c   0x000000d8   Code   RO          286    .text               startup_swm341.o
+    0x000099f4   0x000099f4   0x000007ae   Code   RO          293    .text               kd034_st7701s.o
+    0x0000a1a2   0x0000a1a2   0x00000024   Code   RO          307    .text               mc_w.l(memcpya.o)
+    0x0000a1c6   0x0000a1c6   0x00000024   Code   RO          309    .text               mc_w.l(memseta.o)
+    0x0000a1ea   0x0000a1ea   0x00000018   Code   RO          311    .text               mc_w.l(strcat.o)
+    0x0000a202   0x0000a202   0x0000000e   Code   RO          313    .text               mc_w.l(strlen.o)
+    0x0000a210   0x0000a210   0x00000012   Code   RO          315    .text               mc_w.l(strcpy.o)
+    0x0000a222   0x0000a222   0x000000de   Code   RO          375    .text               mf_w.l(ddiv.o)
+    0x0000a300   0x0000a300   0x00000022   Code   RO          377    .text               mf_w.l(dflti.o)
+    0x0000a322   0x0000a322   0x0000003e   Code   RO          379    .text               mf_w.l(dfixi.o)
+    0x0000a360   0x0000a360   0x0000002c   Code   RO          405    .text               mc_w.l(uidiv.o)
+    0x0000a38c   0x0000a38c   0x00000062   Code   RO          407    .text               mc_w.l(uldiv.o)
+    0x0000a3ee   0x0000a3ee   0x00000020   Code   RO          409    .text               mc_w.l(llushr.o)
+    0x0000a40e   0x0000a40e   0x00000000   Code   RO          413    .text               mc_w.l(iusefp.o)
+    0x0000a40e   0x0000a40e   0x000000ba   Code   RO          414    .text               mf_w.l(depilogue.o)
+    0x0000a4c8   0x0000a4c8   0x0000014e   Code   RO          416    .text               mf_w.l(dadd.o)
+    0x0000a616   0x0000a616   0x000000e4   Code   RO          418    .text               mf_w.l(dmul.o)
+    0x0000a6fa   0x0000a6fa   0x00000030   Code   RO          420    .text               mf_w.l(dfixul.o)
+    0x0000a72a   0x0000a72a   0x00000002   PAD
+    0x0000a72c   0x0000a72c   0x00000030   Code   RO          422    .text               mf_w.l(cdrcmple.o)
+    0x0000a75c   0x0000a75c   0x00000024   Code   RO          424    .text               mc_w.l(init.o)
+    0x0000a780   0x0000a780   0x0000001e   Code   RO          426    .text               mc_w.l(llshl.o)
+    0x0000a79e   0x0000a79e   0x00000024   Code   RO          428    .text               mc_w.l(llsshr.o)
+    0x0000a7c2   0x0000a7c2   0x00000002   PAD
+    0x0000a7c4   0x0000a7c4   0x00000020   Code   RO          320    i.__0printf         mc_w.l(printfa.o)
+    0x0000a7e4   0x0000a7e4   0x0000000e   Code   RO          432    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0000a7f2   0x0000a7f2   0x00000002   Code   RO          433    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0000a7f4   0x0000a7f4   0x0000000e   Code   RO          434    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0000a802   0x0000a802   0x00000002   PAD
+    0x0000a804   0x0000a804   0x00000184   Code   RO          327    i._fp_digits        mc_w.l(printfa.o)
+    0x0000a988   0x0000a988   0x000006dc   Code   RO          328    i._printf_core      mc_w.l(printfa.o)
+    0x0000b064   0x0000b064   0x00000024   Code   RO          329    i._printf_post_padding  mc_w.l(printfa.o)
+    0x0000b088   0x0000b088   0x0000002e   Code   RO          330    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x0000b0b6   0x0000b0b6   0x00000002   PAD
+    0x0000b0b8   0x0000b0b8   0x000000dc   Code   RO          301    i.ceil              m_ws.l(ceil.o)
+    0x0000b194   0x0000b194   0x0000006c   Code   RO          348    i.malloc            mc_w.l(malloc.o)
+    0x0000b200   0x0000b200   0x00000080   Data   RO           73    .rodata.ExCvt       ff.o
+    0x0000b280   0x0000b280   0x0000000d   Data   RO           74    .rodata.LfnOfs      ff.o
+    0x0000b28d   0x0000b28d   0x00000003   PAD
+    0x0000b290   0x0000b290   0x0000000c   Data   RO           70    .rodata.VolumeStr   ff.o
+    0x0000b29c   0x0000b29c   0x0000000e   Data   RO           66    .rodata.f_mkfs.cst  ff.o
+    0x0000b2aa   0x0000b2aa   0x0000000e   Data   RO           67    .rodata.f_mkfs.cst32  ff.o
+    0x0000b2b8   0x0000b2b8   0x00000010   Data   RO           68    .rodata.f_mkfs.defopt  ff.o
+    0x0000b2c8   0x0000b2c8   0x000001f2   Data   RO           83    .rodata.ff_wtoupper.cvt1  ffunicode.o
+    0x0000b4ba   0x0000b4ba   0x000000bc   Data   RO           84    .rodata.ff_wtoupper.cvt2  ffunicode.o
+    0x0000b576   0x0000b576   0x000000c2   Data   RO            4    .rodata.str1.1      main.o
+    0x0000b638   0x0000b638   0x00000059   Data   RO           69    .rodata.str1.1      ff.o
+    0x0000b691   0x0000b691   0x00000001   PAD
+    0x0000b692   0x0000b692   0x00000100   Data   RO           82    .rodata.uc437       ffunicode.o
+    0x0000b792   0x0000b792   0x00000002   PAD
+    0x0000b794   0x0000b794   0x00000020   Data   RO          431    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0000b7b8, Size: 0x00004b58, Max: 0x00010000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x0000b7b8   0x00000004   Data   RW          395    .data               mc_w.l(stdout.o)
+    0x20000004   0x0000b7bc   0x00000004   Data   RW          411    .data               mc_w.l(mvars.o)
+    0x20000008   0x0000b7c0   0x00000004   Data   RW          412    .data               mc_w.l(mvars.o)
+    0x2000000c   0x0000b7c4   0x00000004   Data   RW          277    .data.CyclesPerUs   system_swm341.o
+    0x20000010   0x0000b7c8   0x00000004   Data   RW           24    .data.LCD_Buffer    swm_rgb_lcd.o
+    0x20000014   0x0000b7cc   0x00000004   Data   RW          276    .data.SystemCoreClock  system_swm341.o
+    0x20000018   0x0000b7d0   0x00000004   Data   RW            3    .data.jpeg_image_sdr  main.o
+    0x2000001c   0x0000b7d4   0x00000004   PAD
+    0x20000020        -       0x0000000c   Zero   RW           65    .bss.FatFs          ff.o
+    0x2000002c        -       0x00000002   Zero   RW           71    .bss.Fsid           ff.o
+    0x2000002e        -       0x00000200   Zero   RW           72    .bss.LfnBuf         ff.o
+    0x2000022e   0x0000b7d4   0x00000002   PAD
+    0x20000230        -       0x00000050   Zero   RW          247    .bss.SD_cardInfo    swm341_sdio.o
+    0x20000280        -       0x00000004   Zero   RW           16    .bss.fac_ms         swm_delay.o
+    0x20000284        -       0x00000004   Zero   RW           15    .bss.fac_us         swm_delay.o
+    0x20000288        -       0x00000234   Zero   RW            5    .bss.fatfs          main.o
+    0x200004bc        -       0x00000010   Zero   RW           41    .bss.fgLayer        swm_dma2d.o
+    0x200004cc        -       0x00000674   Zero   RW            6    .bss.jfif_info      main.o
+    0x20000b40        -       0x00000010   Zero   RW           40    .bss.outLayer       swm_dma2d.o
+    0x20000b50        -       0x00000004   Zero   RW           57    .bss.sd_initialized  diskio.o
+    0x20000b54   0x0000b7d4   0x00000004   PAD
+    0x20000b58        -       0x00000000   Zero   RW          284    HEAP                startup_swm341.o
+    0x20000b58        -       0x00004000   Zero   RW          283    STACK               startup_swm341.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       796          0          0          0          4       2554   diskio.o
+     18998          0        286          0        526      31739   ff.o
+       592         10        942          0          0       1637   ffunicode.o
+      1710        126          0          0          0       3064   jfif_parser.o
+      1966          0          0          0          0       2307   kd034_st7701s.o
+       912          0        194          4       2216       6605   main.o
+       216         10        424          0      16384       4424   startup_swm341.o
+       840          0          0          0          0       6789   swm341_dma2d.o
+       428          0          0          0          0       1772   swm341_flash.o
+      1040          0          0          0          0       5802   swm341_gpio.o
+      2680         20          0          0          0       9291   swm341_jpeg.o
+      1068          0          0          0          0       8621   swm341_lcd.o
+       156          0          0          0          0       1207   swm341_port.o
+      3742          4          0          0         80       8885   swm341_sdio.o
+       354          4          0          0          0       3395   swm341_sdram.o
+      1558          0          0          0          0       9159   swm341_uart.o
+       650          0          0          0          8       5117   swm_delay.o
+       280          0          0          0         32       1441   swm_dma2d.o
+      1248          0          0          4          0       3222   swm_rgb_lcd.o
+       146          0          0          0          0       2021   swm_usart.o
+      1540          6          0          8          0       4489   system_swm341.o
+
+    ----------------------------------------------------------------------
+     40934        180       1884         16      19260     123541   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        14          0          6          0         10          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+       220         16          0          0          0         84   ceil.o
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        30          0          0          0          0         68   llshl.o
+        36          0          0          0          0         68   llsshr.o
+        32          0          0          0          0         68   llushr.o
+       108         16          0          0          0         84   malloc.o
+        36          0          0          0          0         68   memcpya.o
+        36          0          0          0          0        108   memseta.o
+         0          0          0          8          0          0   mvars.o
+      2258         90          0          0          0        452   printfa.o
+         0          0          0          4          0          0   stdout.o
+        24          0          0          0          0         68   strcat.o
+        18          0          0          0          0         68   strcpy.o
+        14          0          0          0          0         68   strlen.o
+        44          0          0          0          0         80   uidiv.o
+        98          0          0          0          0         92   uldiv.o
+        48          0          0          0          0         68   cdrcmple.o
+       334          0          0          0          0        148   dadd.o
+       222          0          0          0          0        100   ddiv.o
+       186          0          0          0          0        176   depilogue.o
+        62          0          0          0          0         80   dfixi.o
+        48          0          0          0          0         68   dfixul.o
+        34          0          0          0          0         76   dflti.o
+       228          0          0          0          0         96   dmul.o
+
+    ----------------------------------------------------------------------
+      4210        138          0         12          0       2256   Library Totals
+         8          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       220         16          0          0          0         84   m_ws.l
+      2820        122          0         12          0       1360   mc_w.l
+      1162          0          0          0          0        812   mf_w.l
+
+    ----------------------------------------------------------------------
+      4210        138          0         12          0       2256   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     45144        318       1884         28      19260     124373   Grand Totals
+     45144        318       1884         28      19260     124373   ELF Image Totals
+     45144        318       1884         28          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                47028 (  45.93kB)
+    Total RW  Size (RW Data + ZI Data)             19288 (  18.84kB)
+    Total ROM Size (Code + RO Data + RW Data)      47056 (  45.95kB)
+
+==============================================================================
+

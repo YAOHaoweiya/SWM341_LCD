@@ -1,0 +1,184 @@
+//	uint32_t i, j;
+//	FRESULT  res;//枚举类型，文件系操作返回码
+//	uint32_t real_len;//存储实际读取的字节数
+//	
+//	DMA2D_InitStructure DMA2D_initStruct;
+// 	
+// 	SystemInit();		
+//	SerialInit();
+//	delay_init();  
+//	
+//	SDRAMInit();
+//	screen_init();//spi 屏幕初始化
+//	
+//	RGBLCDInit();//屏幕引脚初始化，并开启开启背光
+//	
+//	LCD_Start(LCD);
+//	
+/////*************DMA2D初始化和测试***************/
+////	DMA2D_initStruct.Interval = CyclesPerUs;
+////	DMA2D_initStruct.IntEOTEn = 1;
+////	DMA2D_Init(&DMA2D_initStruct);
+////	
+////	test_PixelFill();
+////	LCD_Start(LCD);
+/////*************DMA2D初始化和测试end*************/
+
+/////***********************测试图片解码*********************/
+////	JPEG_initStruct.DoneIEn = 0;//解码完成中断使能选项
+////	JPEG_initStruct.ErrorIEn = 1;//解码出错中断使能选项
+////	JPEG_Init(JPEG, &JPEG_initStruct);
+////	
+////	memcpy(jpeg_image_sdr, jpeg_image1, sizeof(jpeg_image1));
+////	jfif_parse(jpeg_image_sdr, sizeof(jpeg_image1), &jfif_info);
+////	
+////	jpeg_outset.format = JPEG_OUT_RGB565;
+////	jpeg_outset.dither = 0;
+////	jpeg_outset.RGBAddr = SDRAMM_BASE;
+////	JPEG_Decode(JPEG, &jfif_info, &jpeg_outset);
+////	LCD_Start(LCD);
+/////***********************测试图片解码end*********************/
+
+///**********************从SD卡读取图片测试**************************/
+//	for(int i = 0; i < SystemCoreClock/10; i++) __NOP();//等待SD卡完成初始化
+//	res = f_mount(&fatfs, "sd:", 1);//（文件系统对象，路径【字符串】，挂载选项【立即挂载】）
+//	if(res!=FR_OK) return 0;//挂载失败do what
+//	
+//	res=f_open(&filr,"sd:1.jpg",FA_READ);//以只读方式打开文件 参数：(文件对象，路径，方式)
+//	if(res!=FR_OK) return 0;//如果失败,do what
+//	
+//	if(f_stat("sd:1.jpg",&fileInfo)==FR_OK)//获取文件信息，存储于fileInfo结构体
+//		res=f_read(&filr,jpeg_image_sdr,fileInfo.fsize,&real_len);//（文件对象，SDRAM+1地址,文件大小,读取的实际大小）
+//	if(res!=FR_OK) return 0; //如果失败，do what
+//	f_close(&filr);
+//	jfif_parse(jpeg_image_sdr,fileInfo.fsize, &jfif_info);
+//	jpeg_outset.format = JPEG_OUT_RGB565;
+//	jpeg_outset.dither = 0;
+//	jpeg_outset.RGBAddr = SDRAMM_BASE;
+//	JPEG_Decode(JPEG, &jfif_info, &jpeg_outset);
+//	while(JPEG_DecodeBusy(JPEG)) __NOP();
+//	LCD_Start(LCD);
+//	
+///**********************从SD卡读取图片测试end*************************/
+//	
+//	
+//	
+
+///****************************从SD卡读取视频测试******************************************************/
+//	for(int i = 0; i < SystemCoreClock/10; i++) __NOP();//等待SD卡完成初始化
+//	/***这里还需进行JPEG结构体初始化和输出格式设置，但是上文已做重复操作******/
+////	JPEG_initStruct.DoneIEn = 0;
+////   JPEG_initStruct.ErrorIEn = 1;
+////   JPEG_Init(JPEG, &JPEG_initStruct);
+////   jpeg_outset.format = JPEG_OUT_RGB565;
+////   jpeg_outset.dither = 0;
+////   jpeg_outset.RGBAddr = SDRAMM_BASE; //jpeg解码输出地址直接指向rgb显存地址
+//	
+//	res = f_mount(&fatfs, "sd:", 1);//（文件系统对象，路径【字符串】，挂载选项【立即挂载】）
+//	if(res!=FR_OK) return 0;//挂载失败do what
+//	/* 打开要播放的视频文件 */
+//	
+//    res = f_open(&filr, "sd:one.avi", FA_OPEN_EXISTING | FA_READ);
+//    if (res != FR_OK)
+//    {
+//        printf("open file fail!\r\n");
+//        while (1)
+//            ;
+//    }
+//    /* 读取avi文件头 */
+//    res = f_read(&filr, jpeg_buf, sizeof(jpeg_buf), &rd);
+//    if (res != FR_OK)
+//    {
+//        printf("read file fial!\r\n");
+//        while (1)
+//            ;
+//    }
+//    /* 对文件头进行解析 */
+//    if (avi_init((uint8_t *)jpeg_buf, rd))
+//    {
+//        printf("avi err:%d\r\n", res);
+//    }
+
+//    printf("fps:%d.\r\n", 1000 / (avix.SecPerFrame / 1000));
+//    uint32_t offset = 0;
+//    offset = avi_srarch_id((uint8_t *)jpeg_buf, rd, "movi"); //寻找movi ID
+//    avi_get_streaminfo((uint8_t *)(jpeg_buf + offset + 4));  //获取流信息
+//    f_lseek(&filr, offset + 12);                             //跳过标志ID,读地址偏移到流数据开始处
+
+//    /* BTIMR0用于控制帧率，每avix.SecPerFrame 微秒中断一次 */
+//    TIMR_Init(BTIMR0, TIMR_MODE_TIMER, CyclesPerUs, avix.SecPerFrame, 1);
+//    TIMR_Start(BTIMR0);
+//    /* TIMR0用于控制按音频采样率播放音频，每秒中断avix.SampleRate次 */
+//    TIMR_Init(TIMR0, TIMR_MODE_TIMER, CyclesPerUs, 1000000 / avix.SampleRate, 0);
+
+//    TIMR_Start(TIMR0);
+//    dac_dma_init((uint32_t)&ppbuf.buf[ppbuf.ping * PCM_BUFSIZE], avix.AudioBufSize / 2);
+//		
+//    while (1 == 1)
+//    {
+//        if (avix.StreamID == AVI_VIDS_FLAG) //视频流
+//        {
+//            if (frameup == 1) //等待时间到达(在BTIMR0的中断里面设置为1)
+//            {
+//                frameup = 0;
+
+//                f_read(&filr, jpeg_buf, avix.StreamSize + 8, &rd); //读入整帧+下一数据流ID信息
+//                if (avix.StreamSize != 0)
+//                {
+//                    // uint32_t t_start = swm_gettick();
+
+//                    /* 如果准备解码下一帧图片时，上一帧图片还没有解码完成，会在此等待，
+//                       最好不要出现这种情况，如果出现这种情况，应降低播放视频的帧率 */
+//                    jfif_parse(jpeg_buf, avix.StreamSize, &jfif_info);
+//                    JPEG_Decode(JPEG, &jfif_info, &jpeg_outset);
+//                    while(JPEG_DecodeBusy(JPEG)) __NOP();
+//                    // printf("%d\r\n",swm_gettick() - t_start);
+//                }
+
+//                if (avi_get_streaminfo(jpeg_buf + avix.StreamSize)) //读取下一帧 流标志
+//                {
+//                    f_close(&filr);
+//                    TIMR_Stop(BTIMR0);
+//                    dac_deinit();
+//                    printf("frame error \r\n");
+//                    break;
+//                }
+//            }
+//        }
+//        else //音频流
+//        {
+//            if (dac_dma == 1) //等待上一帧音频播放完成
+//            {
+//                dac_dma = 0;
+
+//                f_read(&filr, &ppbuf.buf[ppbuf.pong * PCM_BUFSIZE], avix.StreamSize, &rd);
+//                /* avi文件中解析出的音频数据时int16_t，需要加上0x8000转换成uint16_t发送给dac */
+//                if (avix.StreamSize != 0)
+//                {
+//                    for (uint32_t i = 0; i < avix.StreamSize / 2; i++)
+//                    {
+//                        ppbuf.buf[ppbuf.pong * PCM_BUFSIZE + i] += 32768;
+//                    }
+//                }
+//                /* 由于上述转换过程，直接播放会有卡顿，切换ping和pong会有改善 */
+//                ppbuf.ping = ppbuf.ping ^ ppbuf.pong;
+//                ppbuf.pong = ppbuf.pong ^ ppbuf.ping;
+//                ppbuf.ping = ppbuf.ping ^ ppbuf.pong;
+//                DMA->CH[DMA_CH0].SRC = (uint32_t)&ppbuf.buf[ppbuf.ping * PCM_BUFSIZE];
+
+//                uint8_t stream_buf[8];
+//                f_read(&filr, stream_buf, 8, &rd);
+//                if (avi_get_streaminfo(stream_buf)) //读取下一帧 流标志
+//                {
+//                    f_close(&filr);
+//                    TIMR_Stop(BTIMR0);
+//                    dac_deinit();
+//                    printf("frame error \r\n");
+//                    break;
+//                }
+//            }
+//        }			
+//    }
+//	
+//	
+///****************************从SD卡读取视频测试end******************************************************/
